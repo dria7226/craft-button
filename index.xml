@@ -1,4 +1,4 @@
-<craft name="button">
+<craft name="button2">
 	<parameter name="radius" type="float" default="1"/>
 	<parameter name="ringThickness" type="float"/>
 	<parameter name="numberOfHoles" type="int" default="4"/>
@@ -8,7 +8,7 @@
 	<script type="text/openjscad">
 	function main(params)
 	{
-	     var radius = params.radius;
+	     var radius = params.radius || 2;
 	     if(radius <= 0) radius = 2;
 	     
 	     var thickness = params.ringThickness || radius/10;
@@ -28,6 +28,7 @@
 	     //------------------------------
 	     
 	     var c = cylinder({'r' : radius , 'h' : depth});
+	     
 	     c = union(c,torus({'ro' : radius - thickness, 'ri' : thickness}).translate([0,0,depth]));
 	     c = union(c,
 	     			intersection(sphere({'r' : radius - thickness*2}).translate([0,0,depth + thickness*2]).scale([1,1,0.4]),cylinder({'h' : depth + thickness, 'r' : radius - thickness*2}))

@@ -13,3 +13,5 @@
 	<button></button>
 </craft>
 ```
+
+![example](example.png)
