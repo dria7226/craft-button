@@ -1,12 +1,14 @@
 # craft-button
 
-#Install
+# Install
 `$ npm install craft-button`
 
-#Parameters
-`numberOfHoles - decides how many holes the button has.`
+# Parameters
+```sh
+numberOfHoles - decides how many holes the button has.
+```
 
-#Example
+# Example
 ```html
 <craft>
 	<craft name="button" module="craft-button"/>
