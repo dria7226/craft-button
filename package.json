@@ -1,6 +1,6 @@
 {
-  "name": "craft-button",
-  "version": "1.0.1",
+  "name": "craft-button-dragosh",
+  "version": "1.0.2",
   "description": "Button.",
   "main": "index.js",
   "scripts": {
