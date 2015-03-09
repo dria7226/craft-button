@@ -1,5 +1,5 @@
 <craft name="button2">
-	<parameter name="radius" type="float" default="1"/>
+	<parameter name="radius" type="float" default="2"/>
 	<parameter name="ringThickness" type="float"/>
 	<parameter name="numberOfHoles" type="int" default="4"/>
 	<parameter name="holeSize" type="float" default="0.2"/>
@@ -8,6 +8,7 @@
 	<script type="text/openjscad">
 	function main(params)
 	{
+		 //vars
 	     var radius = params.radius || 2;
 	     if(radius <= 0) radius = 2;
 	     
@@ -36,7 +37,7 @@
 	     
 	     for(var i = 0; i < holes; i++)
 	     {
-	         c = difference(c, cylinder({'r': hole_size, 'h' : depth*2}).translate([hole_distance*cos(360/holes*i),hole_distance*sin(360/holes*i),-depth + thickness]));
+	         c = difference(c, cylinder({'r': hole_size, 'h' : depth*2}).translate([hole_distance*Math.cos(2*Math.PI/holes*i),hole_distance*Math.sin(2*Math.PI/holes*i),-depth + thickness]));
 	     }
 	     
 	     c = difference(c,sphere({'r' : radius - thickness*2}).translate([0,0,depth*10]).scale([1,1,0.15]));
